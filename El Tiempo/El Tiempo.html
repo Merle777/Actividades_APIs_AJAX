@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pronóstico del Clima</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+			}*
+
+		.wrapper{
+			background: url('fondo.jpg') no-repeat center center;
+			background-size: cover;
+			height: 700px;
+		}
+			
+
+		.form {
+			margin-left: 40%;
+			width: 200px;
+			height: 30px;
+			border: 10px solid green;
+			border-radius: 5px;
+		}
+
+		.btn{
+			background-color: green;
+			border: 10px solid green;
+			border-radius: 5px;
+			display: inline-block;
+		}
+
+		@font-face {
+  			font-family: "KaolyDemo-Regular";
+  			src: url("./fonts/Kaoly.woff2") format("woff2"); /* Modern Browsers */
+  			font-weight: normal;
+  			font-style: normal;
+			}
+
+		h1 {
+  			font-family: "KaolyDemo-Regular";
+  			font-size: 50px;
+  			text-align: center;
+			}
+
+	</style>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+    		$('form').submit(function() {
+        // your code here (build up your url)
+        	$.get(url, function(res) {
+            // your code here
+        	}, 'json');
+        // don't forget to return false so the page doesn't refresh
+        	return false;
+    	});
+	});
+
+	</script>
+</head>
+<body>
+	<div class='wrapper'>
+		<h1>Pronóstico del Clima</h1>
+		<div class='container'>
+			<input class="form" type="text" placeholder="Ingrese Ciudad">
+			<button class="btn" type="submit">Ver</button>
+		</div>
+	</div>
+</body>
+</html>
