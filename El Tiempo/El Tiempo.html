@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -131,4 +132,139 @@
 		</div>
 	</div>
 </body>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pronóstico del Clima</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+			}*
+
+		.wrapper{
+			background: url('fondo.jpg') no-repeat center center;
+			background-size: cover;
+			height: 700px;
+		}
+		
+
+		.infobox{
+			margin-left: 20%;
+			width: 60%;
+			height: 60%;
+			/*border: 2px solid red;*/
+			text-align: center;
+		}
+
+		.form {
+			
+			width: 200px;
+			height: 30px;
+			border: 10px solid green;
+			border-radius: 5px;
+			margin-left: 6%;
+		}
+
+		.btn{
+			background-color: green;
+			border: 10px solid green;
+			border-radius: 5px;
+			display: inline-block;
+		}
+		#nomostrar{
+			display: none;
+		}
+
+		.min{
+			display: inline-block;
+		}
+		.max{
+			display: inline-block;
+		}
+
+		@font-face {
+  			font-family: "Kaoly-Regular";
+  			src: url("./fonts/Kaoly.woff2") format("woff2");
+  			font-weight: normal;
+  			font-style: normal;
+			}
+
+
+		.infobox h1 {
+  			font-family: "Kaoly-Regular";
+  			font-size: 50px;
+  			text-align: center;
+		}
+		h1 {
+  			font-family: "Kaoly-Regular";
+  			font-size: 50px;
+  			margin-left: 10%;
+			}
+
+		h2{
+			text-transform: capitalize;
+		}
+
+	</style>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('form').submit(function(){
+				var ingresa = $('.form').val();
+				var url = 'http://api.openweathermap.org/data/2.5/weather?q='+ingresa+'&lang=es&units=metric&appid=2a45c78b32600429b477588642534d62';
+				$.get(url, function(city){
+					console.log(city);
+					$('.ciudad').append('<h1>'+city.name+'</h1>');
+
+				$.get(url, function(temp){
+					$('.temperatura').append('<h2>'+temp.main.temp+' ° C</h2>')
+				});
+
+				$.get(url, function(icono){
+					var iconurl='http://openweathermap.org/img/wn/'+icono.weather[0].icon+'@2x.png'
+					$('.icono').append('<img src="'+iconurl+'"></img>');
+				});
+
+				$.get(url, function(sensa){
+					$('.sensacion').append('<h2>'+sensa.weather[0].description+'</h2>');
+				});
+
+				$.get(url, function(tempmin){
+					$('.min').append('<p>Temp. Minima: '+tempmin.main.temp_min+' ° C   ||   </p>')
+				});
+
+				$.get(url, function(tempmax){
+					$('.max').append('<p>Temp. Maxima: '+tempmax.main.temp_min+' ° C</p>')
+				});
+
+					
+				}, 'json');
+				return false;
+			});
+
+		});
+
+	</script>
+</head>
+<body>
+	<div class='wrapper'>
+		<h1>El Clima</h1>
+		<div class='infobox'>
+			<form>
+				<input class="form" type="text" placeholder="  Ingrese Ciudad">
+				<button class="btn" type="submit">Ver</button>
+			</form>
+			<div class='ciudad'></div>
+			<div class='temperatura'></div>
+			<div class='icono'></div>
+			<div class='sensacion'></div>
+			<div class='min'></div>
+			<div class='max'></div>
+		</div>
+	</div>
+</body>
+>>>>>>> b7cf55768b6efb03a1eae51db371e8a48018ec95
 </html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game of Thrones</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+			}*
+
+
+	</style>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+        	for(var i = 1; i < 444; i++){
+        		var url = "https://anapioficeandfire.com/api/houses/"+i+"/";
+        		// console.log(url);
+         	 };
+
+        	// $('div.container').on('click', 'img', function(){
+
+        		$.get(url, function(nombre){
+        			console.log (nombre "name");
+        			// $('.nombre').append('<h2>'+nombre .name+'</h2>');
+        		})
+
+        	// 		$('.pokemon img').remove();
+        	// 		$('.pokemon').append('<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+$(this).attr('id')+'.png">');
+
+        	// 		$.get("https://pokeapi.co/api/v2/pokemon/"+$(this).attr('id')+"/", function(tipo){
+        	// 			$('.tipo li').remove();
+        	// 			 for(var i = 0; i < tipo.types.length; i++) {
+         //              	$('.tipo').append('<li>'+ tipo.types[i].type.name +'</li>');
+         //           		 }	
+        	// 		})
+
+        	// 	$.get("https://pokeapi.co/api/v2/pokemon/"+$(this).attr('id')+"/", function(peso){
+        	// 		$('.peso li').remove();
+        	// 		$('.peso').append('<li>'+peso .weight+'</li>');
+        	// 	})
+
+        	// 	$.get("https://pokeapi.co/api/v2/pokemon/"+$(this).attr('id')+"/", function(altura){
+        	// 		$('.altura li').remove();
+        	// 		$('.altura').append('<li>'+altura .height+'</li>');
+        	// 	})
+
+
+        	// });
+
+         //    $('img').click(function(){
+         //      $('.infobox').hide();
+         //      $('.infobox').slideToggle('.container');
+         //      $('h4').hide();
+         //    })
+      })
+
+
+	</script>
+</head>
+<body>
+	<div class='wrapper'>
+		
+	</div>
+</body>
+</html>
